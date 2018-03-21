@@ -259,8 +259,15 @@ public class ExpressionGrammarParser extends Parser {
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ExpressionGrammarVisitor ) return ((ExpressionGrammarVisitor<? extends T>)visitor).visitHandle(this);
+			if ( visitor instanceof ExpressionGrammarVisitor )
+				try {
+					return ((ExpressionGrammarVisitor<? extends T>)visitor).visitHandle(this);
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			else return visitor.visitChildren(this);
+			return null;
 		}
 	}
 	public static class DivExpContext extends ExpressionContext {

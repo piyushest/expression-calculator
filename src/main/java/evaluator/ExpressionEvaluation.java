@@ -16,10 +16,6 @@ public class ExpressionEvaluation extends ExpressionGrammarBaseVisitor<Double> {
 
 	Map<String, Double> tempVariables = new HashMap<>();
 
-	@Override
-	public Double visit(ParseTree tree) {
-		return tree.accept(this);
-	}
 
 	@Override
 	public Double visitProg(ExpressionGrammarParser.ProgContext ctx) {
@@ -180,7 +176,7 @@ public class ExpressionEvaluation extends ExpressionGrammarBaseVisitor<Double> {
 	public Double visitLetExp(ExpressionGrammarParser.LetExpContext ctx) {
 		String handle = ctx.HANDLE().getText();
 		Double intValue = new Double(visit(ctx.expression(0)));
-		log.debug("Inside Let expression where handle is " + handle + "and value is " + intValue);
+		log.debug("Inside Let expression where handle is " + handle + " and value is " + intValue);
 		tempVariables.put(handle, intValue);
 		log.debug("Number of variables stored are " + tempVariables.size());
 		return visit(ctx.expression(1));
