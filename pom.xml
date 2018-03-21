@@ -81,7 +81,7 @@
 					<archive>
 						<manifest>
 							<addClasspath>true</addClasspath>
-							<mainClass>com.synopsys.homework.AppCalculator</mainClass>
+							<mainClass>evaluator.Calculator</mainClass>
 						</manifest>
 					</archive>
 					<descriptorRefs>
