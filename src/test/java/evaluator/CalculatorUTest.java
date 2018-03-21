@@ -2,7 +2,6 @@ package evaluator;
 
 import org.junit.Assert;
 import org.junit.Test;
-
 public class CalculatorUTest {
 
 	@Test

@@ -6,9 +6,14 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Expression Calculator</name>
 	<properties>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.source>1.8</maven.compiler.source>
 		<antlr4.plugin.version>4.6</antlr4.plugin.version>
 		<antlr4.version>4.6</antlr4.version>
 		<logback.version>1.2.3</logback.version>
+		<java.source>1.8</java.source>
+		<java.version>1.8</java.version>
+		<java.target>1.8</java.target>
 	</properties>
 
 	<dependencies>
@@ -32,7 +37,7 @@
 			<artifactId>commons-lang3</artifactId>
 			<version>3.3.2</version>
 		</dependency>
-			<dependency>
+		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.12</version>
@@ -45,10 +50,10 @@
 				<artifactId>antlr4-maven-plugin</artifactId>
 				<version>${antlr4.plugin.version}</version>
 				<configuration>
-				<sources>
-                   <source>/src/main/java/antlr4/</source>
-               </sources>
-				 <outputDirectory>src/main/java/antlr4/</outputDirectory>
+					<sources>
+						<source>/src/main/java/antlr4/</source>
+					</sources>
+					<outputDirectory>src/main/java/antlr4/</outputDirectory>
 					<arguments>
 						<argument>-visitor</argument>
 					</arguments>

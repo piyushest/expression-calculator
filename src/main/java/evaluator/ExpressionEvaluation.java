@@ -3,10 +3,8 @@ package evaluator;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.antlr.v4.runtime.tree.ParseTree;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import antlr4.ExpressionGrammarBaseVisitor;
 import antlr4.ExpressionGrammarParser;
 import antlr4.Operations;
@@ -15,7 +13,6 @@ public class ExpressionEvaluation extends ExpressionGrammarBaseVisitor<Double> {
 	private static final Logger log = (Logger) LoggerFactory.getLogger(ExpressionEvaluation.class);
 
 	Map<String, Double> tempVariables = new HashMap<>();
-
 
 	@Override
 	public Double visitProg(ExpressionGrammarParser.ProgContext ctx) {
